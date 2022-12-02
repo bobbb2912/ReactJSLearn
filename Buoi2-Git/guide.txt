@@ -24,3 +24,7 @@ Cac lenh tuong tac voi terminal
 ==========
 kiem tra co them gi moi khong
 + git fetch
+======
+check su thay doi
++ git status
+=======
