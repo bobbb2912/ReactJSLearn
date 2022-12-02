@@ -9,8 +9,9 @@ git branch -M main
 git push -u origin main
 + git push --set-upstream origin master (dung cho lan dau tien, khi local co nhanh ma tren remote khong co)
 ========
-+ git add test.txt
-+git push => 
++ git add .
++ git commit "add"
++ git push => 
 + git pull de lay ve
 ================
 - Add git vào local
