@@ -3,9 +3,14 @@
 echo "# ReactJSLearn" >> README.md
 git init // khoi tao git=>chay duy nhat mot lan
 git add . // day tat ca file hien tai
-git commit -m "first commit"
+git commit -m "first commit" //dat ten cho commit: version
 git branch -M main
-git remote add origin https://github.com/bobbb2912/ReactJSLearn.git
+git remote add origin https://github.com/bobbb2912/ReactJSLearn.git // link remote vao local 
 git push -u origin main
+git push --set-upstream origin master (dung cho lan dau tien, khi local co nhanh ma tren remote khong co)
+
 ================
 - Add git vào local
+===========
+https://github.com/boybeo68/rjs2211/tree/master/B1-KhaiGiang
+=====================
