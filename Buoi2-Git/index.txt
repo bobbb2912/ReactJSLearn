@@ -1,0 +1,6 @@
+- Roadmap Frontend developer
+- cách thức 1 website hoạt động
++ https://academind.com/tutorials/how-the-web-works
++ https://www.youtube.com/watch?v=hJHvdBlSxug
++ 
+- Git

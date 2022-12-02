@@ -1,0 +1,11 @@
+- tạo tài khaonr github
+- Tạo repositories
+echo "# ReactJSLearn" >> README.md
+git init // khoi tao git=>chay duy nhat mot lan
+git add . // day tat ca file hien tai
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/bobbb2912/ReactJSLearn.git
+git push -u origin main
+================
+- Add git vào local
