@@ -2,8 +2,8 @@
 - Tạo repositories
 echo "# ReactJSLearn" >> README.md
 + git init // khoi tao git=>chay duy nhat mot lan
-+ git add . // day tat ca file hien tai
-+ git commit -m "first commit" //dat ten cho commit: version
++ git add . // day tat ca file hien tai, chon cac file muon day len 
++ git commit -m "first commit" //dat ten cho commit: version,
 git branch -M main
 + git remote add origin https://github.com/bobbb2912/ReactJSLearn.git // link remote vao local 
 git push -u origin main
@@ -12,7 +12,7 @@ git push -u origin main
 + git add .
 + git commit -m "add"
 + git push => 
-+ git pull de lay ve
++ git pull de lay ve, cap nhat
 ================
 - Add git vào local
 ===========
@@ -21,6 +21,8 @@ https://github.com/boybeo68/rjs2211/tree/master/B1-KhaiGiang
 Cac lenh tuong tac voi terminal
 + cd {ten thu muc} : di vao thu muc
 + cd .. : di ra khoi thu muc 
++ ls: kiem tra ten thu muc con
++ ls -a: list ten thu muc con + file
 ==========
 kiem tra co them gi moi khong
 + git fetch
