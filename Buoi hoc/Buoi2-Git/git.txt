@@ -1,0 +1,6 @@
+- quản lý source code: 
++ share (push => remote => clone về để lấy code)
++ update source code: pull code về
++ backup source.
++ quản lý version: 
++ teamwork: 
