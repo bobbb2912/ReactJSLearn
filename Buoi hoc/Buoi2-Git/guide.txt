@@ -22,6 +22,9 @@ Cac lenh tuong tac voi terminal
 + cd {ten thu muc} : di vao thu muc
 + cd .. : di ra khoi thu muc 
 + ls: kiem tra ten thu muc con
++ ls: kiem tra ten thu muc con
++ ls -a: list ten thu muc con + file
++ pwd: kiem tra 
 ==========
 kiem tra co them gi moi khong
 + git fetch
