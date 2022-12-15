@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .border {
+           border: 1px solid #333; 
+           border-radius: 5px; 
+           padding: 5px;
+        }
+        input {
+            margin-bottom: 10px;
+            width: auto;
+            /* min-width: 100px; */
+
+        }
+        form {
+            /* border: #333 2px solid; */
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Sign Up</h1>
+        <h3>It's quick and easy</h3>
+        <hr>
+        <form action="index.html" method="post">
+            <input type="text" name="FirstName" id="FirstName" placeholder="First name" class="border">
+            <input type="text" name="LastName" id="LastName" placeholder="Last Name" class="border"> <br>
+            <input type="text" name="EmailOrMoblie" id="EmailOrMoblie" placeholder="Mobile number or email address" class="border"><br>
+            <input type="password" name="Password" placeholder="New password" class="border"><br>
+            <label for="DateOfBirth">Date of birth</label><br>
+            <input type="date" name="DateOfBirth" id="DateOfBirth"> <br>
+            <!-- <input type="month" name="Month" id="Month">
+            <input type="datetime" name="Year" id="Year"> -->
+            <label for="Gender">Gender</label> <br>
+            <!-- <div class=""> -->
+                <label for="Femail">Femail</label>
+                <input type="radio" name="Gender" value="Female" class="border">
+            <!-- </div> -->
+            <!-- <div> -->
+                <label for="Male">Male</label>
+                <input type="radio" name="Gender" value="Male" class="border">
+            <!-- </div> -->
+            <!-- <div> -->
+                <label for="Custom">Custom</label>
+                <input type="radio" name="Gender" value="He:'Wish him a happy birthday!'" id="Custom" class="border">
+            <!-- </div> -->
+            <br>
+            <select  class="border">
+                <!-- <option value="Male">Male</option>
+                <option value="Female">Female</option> -->
+                <option value="He:'Wish him a happy birthday!'">He:"Wish him a happy birthday!"</option>
+            </select>
+            <br>
+            <br>
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+</body>
+</html>

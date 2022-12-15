@@ -1,0 +1,7 @@
+HTML: 
++ table
++ form
+deploy page: public ra ben ngoai, su dung git: html, css, js
+CSS
++ add css vao HTML
++ selector co ban
