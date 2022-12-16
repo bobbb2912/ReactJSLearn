@@ -1,0 +1,7 @@
+- tim hieu ve position, overflow, 
+https://docs.google.com/presentation/d/1qakCv5vw0hEeZPczdqgGkEqPUQrCeYSj/edit#slide=id.p6
+
+- xem lai cac thuoc tinh da hoc
+- buoi sau hoc: display: flex
+=> bai kiem tra
+https://www.figma.com/file/WP5O7X2fVwgJ3KXvuloaHP/Figmaland--Business-Landing-page-(Community)?node-id=65%3A0&t=QEEuqshpfj5pHX0e-0

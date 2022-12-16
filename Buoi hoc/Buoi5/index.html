@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@1,100&display=swap" rel="stylesheet">
+    <!-- font face css -->
+    <!-- box modal -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'HienFont';
+        }
+
+        @font-face {
+            font-family: HienFont;
+            src: url(./NotoSansSinhala-VariableFont_wdth\,wght.ttf);
+        }
+        h1 {
+
+            color: rgb(195, 195, 49);
+        }
+        .blue-color {
+            color: blue;
+        }
+        #name {
+            background-color: blueviolet;
+            margin-left: 20px;
+        }
+
+        .parent {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        /* chi style cho the h3 nam trong parent=> phan cap cha con */
+        /* .parent > h3 {
+            color: rgb(188, 40, 40);
+        } */
+        /* style cho tat ca h3 trong class parent => phan cap trong ngoai*/
+        .parent h3 {
+            color: red;
+            /* font-family: 'Noto Sans', sans-serif; */
+            font-family: 'HienFont';
+        }
+        /* liet ke, gom nhom */
+        /* p, 
+        span {
+            color: blueviolet;
+            font-size: 20px;
+        } */
+        .font {
+            background-color: #333;
+            width: 400px;
+            height: 400px;
+            font-family: 'HienFont';
+
+        }
+        .font > .big-font {
+            color: aqua;
+            font-size: 100px;
+        }
+        
+        .big-font > p {
+            color: blue;
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        .font .small-font  {
+            color: burlywood;
+            font-size: 20px;
+            font-family: 'HienFont';
+        }
+      
+        .half-w {
+            width: 50%;
+            height: 50px;
+            background-color: blueviolet;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- link cdn:  -->
+    selector <br>
+    - html selector: su dung ten the lam selector
+<br>- class selector: 
+<br>- id selector: 
+<br>- universal selector: define cho toan bo page
+<br>- selector phan cap:
+<br>- Pseudo class selector: cho phep dinh dang cac phan tu
+khong nam trong html =>  
+<br>- Pseudo element selector:
+    <h1 id="title">H1</h1>
+    <h3 id="name">H3</h3>
+    <p >p</p>
+    <span >this is span</span>
+    <div>div ben ngoai</div>
+    <div class="parent">
+        <h3>child1</h3>
+        <div>
+            <h3>child2</h3>
+        </div>
+    </div>
+    <div class="font">
+        <div class="small-font">
+            <p>Small</p>
+        </div>
+        <div class="big-font">
+            test 
+            <p class="big-font">Big</p>
+        </div>
+    </div>
+    <!-- don vi do luong -->
+    <!-- tuyet doi: px -->
+    <!-- tuong doi (tham chieu giua cha va con): %, em (an theo font size gan nhat), rem (an theo thuoc tinh font size cua html goc) -->
+    <div class="half-w">
+        half width
+    </div>
+</body>
+</html>
