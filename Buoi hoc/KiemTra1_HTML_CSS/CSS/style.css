@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    /* font-family: 'Graphik'; */
+    box-sizing: border-box;
 }
 
 #desktop-header {
@@ -9,8 +9,7 @@
     /* Width: 1775.77px; */
     Height: 930px;
     /* display: flex; */
-    background-image: url('D:/ReactJS/ReacJS/Buoi hoc/KiemTra1_HTML_CSS/Image/bg_header.png');
-    
+    background-image: url('BTVN/KiemTra1_HTML_CSS/Image/bg_header.png');
 }
 
 #desktop-navbar {
@@ -45,6 +44,8 @@
 
 .right {
     margin-top: 43px;
+    /* display: flex; */
+    /* gap: 20px; */
 }
 
 .desktop-title {
@@ -234,8 +235,9 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-top: 40px;
-    margin: 0 400px;
+    justify-content: center;
+    margin: 0 20px;
+    margin-top: 100px;
 }
 
 .partner-title {
@@ -245,9 +247,9 @@
 .client-name {
     margin-top: 70px;
     display: flex;
-    
-    /* max-width: 100px; */
+    /* max-width: 700px; */
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .client-name_item {
