@@ -41,6 +41,7 @@ var a1 = 20;
 
 // kieu du lieu: number, boolean, string, function, object, undefined
 // khai bao bien: var, const, let
+//undefine va null: undefine co kdl la undefine va khong duoc dinh danh tu trước, null co kieu dl la object
 
 let number = 123;
 let string = 'hien';
