@@ -1,0 +1,3 @@
+- string
+- number, math (toan hoc, parse)
+- function(cu phap, callback, )
