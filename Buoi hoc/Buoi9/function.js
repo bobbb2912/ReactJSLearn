@@ -35,7 +35,7 @@ const parseNumber = (numberStr) => {
     return parseFloat(numberStr);
 };
 
-let total = parseNumber('10') + 10;
+// let total = parseNumber('10') + 10;
 
 // console.log(total);
 
@@ -54,4 +54,40 @@ const symmetry = (k) => {
     }
 }
 
-console.log(symmetry(1234321));
+// console.log(symmetry(1234321));
+
+//rest params {...}
+
+const sumAll = (...allParams) => {
+  let total = 0;
+
+  for (let i = 0; i < allParams.length; i++) {
+    total += allParams[i];
+    
+  }
+  return total;
+}
+
+// console.log(sumAll(5, 6, 7, 8));
+
+
+// callback function: mot function nhu 1 param cua function khac
+const aFunction = (callBack) => {
+  console.log('function a');
+  callBack();
+}
+// const bFunction = () => {
+//   console.log('function b');
+// }
+
+// aFunction(bFunction); // b duoc goi la callBack function
+// aFunction(() => {
+//   console.log('function c');
+// }); // callback: de thuc hien mot tac vu sau khi hoan thanh mot tac vu khac
+
+// mot vi du ve bat dong bo
+// console.log('1');
+// setTimeout(() => {
+//   console.log('3');
+// }, 1000); // cho 1 giay moi chay function ben trong
+// console.log('2');

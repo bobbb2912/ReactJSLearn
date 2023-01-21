@@ -1,0 +1,1 @@
+- object, array (cac ham cua object, array)
