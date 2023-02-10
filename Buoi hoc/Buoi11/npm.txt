@@ -1,0 +1,4 @@
+npm (node package manager): trinhf quản lý thư viện => kéo thư viện từ internet về và sử dụng
+làm thế nào để biết một thư viện chất lượng (star, )
+- npm init -y : tao ra mot file json
+- cai dat mot thu vien: node_modules

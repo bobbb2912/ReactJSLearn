@@ -1,0 +1,15 @@
+{
+  "name": "buoi11",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bob",
+  "license": "ISC",
+  "dependencies": {
+    "format-money-js": "^1.6.2",
+    "shortid": "^2.2.16"
+  }
+}
