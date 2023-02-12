@@ -1,3 +1,5 @@
 - map, filter, reduce, sort, find, findindex
 - nmp, yarn (quanr lý thư viện)
-- 
+- npm install (hoacj yarn install): tai tat ca thu vien o dependencies ve
+
+
