@@ -117,3 +117,5 @@ tinhS(a, b, h, c, d, e, f);
 // bai test quan ly sinh vien
 // npm: tim hieu thu vien readline-sync, fs
 
+// ///////////////
+// promise 

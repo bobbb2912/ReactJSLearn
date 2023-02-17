@@ -1,0 +1,13 @@
+su dung thu vien fs: dataJson.txt
+
+Student Managerment 
+===============================
+ 1.Show all student
+ 2.Create student and return Menu
+ 3.Delete student
+ 4.Edit student
+ 5.Find student by name
+ 6.Sort student by name ascending 
+ 7.Sort student by age ascending 
+ 8.Exit
+Your chose?
