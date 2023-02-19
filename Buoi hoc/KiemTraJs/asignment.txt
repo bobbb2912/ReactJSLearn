@@ -1,0 +1,19 @@
+Làm module quản lý sinh viên của trường đại học. 
+Mỗi sinh viên có các thông tin sau: id, tên, tuổi, giới tính, điểm vào trường, điểm trung bình 
+yêu cầu:
+- Phần mềm hoạt động và thao tác dựa trên terminal: hiển thị thông tin, nhập thông tin …v..v (gợi ý: có thể sử dụng thư viện readline-sync)
+- Hiển thị menu các chức năng, khi thực hiện xong 1 chức năng tiếp tục hiển thị menu để người dùng tiện sử dụng
+- Dữ liệu lưu lại được để những lần sau tiếp tục sử dụng (gợi ý có thể lưu dữ liệu dưới dạng file txt => sử dụng thư viện fs có sẵn của nodejs) 
+- Phần mềm có các chức năng sau : 
++ Hiển thị tất cả học sinh 
++ Thêm mới học sinh 
++ Xoá 1 học sinh theo id
++  Xoá nhiều học sinh theo id
++ Edit thông tin học sinh 
++ Tìm kiếm học sinh theo tên 
++ Tìm kiếm học sinh thủ khoa vào trường
++ Hiển thị danh sách học sinh bị cảnh cáo ( điểm trung bình < 4) 
++ Sắp xếp học sinh theo bảng chữ cái
++ Sắp xếp học sinh theo điểm trung bình tăng dần
++  Sắp xếp học sinh theo tuổi tăng dần 
++  Exit: thoát khỏi chương trình và không hiện menu nữa

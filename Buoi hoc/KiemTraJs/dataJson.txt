@@ -1,1 +1,2 @@
-name: hien - age: 23 - gender: male
+{"id": "1", "name": "Hien", "age": "21", "gender": "female", "transcript": "9", "gpa": "3" }
+{"id": "2", "name": "Linh", "age": "23", "gender": "male", "transcript": "8", "gpa": "2" }
