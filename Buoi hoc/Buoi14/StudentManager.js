@@ -64,10 +64,13 @@ const createStudent = () => {
 
 const deleteStudentById = () => {
     const id = readlineSync.question('Enter id you want delete? ');
-    if(studentJson.indexOf(id) >= 0) {
+    
+    let indexId = studentJson.findIndex((i) => i.id === id);
+    if(indexId >= 0) {
         const filterWithoutId = studentJson.filter((i) => i.id != id);
         studentJson = filterWithoutId;
         savefile();
+        console.log('save done');
     } else {
         console.log('Id is not exist!');
     }
@@ -77,10 +80,13 @@ const deleteListStudentById = () => {
     let listID = idDelete.split(',');
     console.log(listID);
     for (let i = 0; i < listID.length; i++) {
-        if(studentJson.indexOf(listID[i]) >= 0) {
-            const filterWithoutId = studentJson.filter((i) => i.id !== id);
+        let indexId = studentJson.findIndex((item) => item.id === listID[i]);
+        console.log('indexID = '  + indexId + 'id = ' + listID[i]);
+        if(indexId >= 0) {
+            const filterWithoutId = studentJson.filter((item) => item.id != listID[i]);
             studentJson = filterWithoutId;
             savefile();
+            console.log('save done');
         } else {
             console.log('Id is not exist!');
         }
@@ -108,6 +114,7 @@ const editStudent = () => {
             gpa: GPAEdit
         };
         studentJson.splice(indexId, 1, newStudent);
+        savefile();
     } else {
         console.log('Khong tim thay ID!');
     }

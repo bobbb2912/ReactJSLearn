@@ -89,7 +89,7 @@ const sortStudentAge = () => {
     studentJson.sort((a, b) => (a.age-b.age));
     console.log(studentJson);
 }
-
+// write quicksort algorithm in java
 while (true) {
     switch (parseInt(choose)) {
         case 0:
