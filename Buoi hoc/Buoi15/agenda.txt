@@ -1,0 +1,7 @@
+npx create-react-app start-react
+ cd start-react
+ yarn start
+ - public: thu muc luu tru anh, index.html,
+- index.html
+https://reactjs.org/tutorial/tutorial.html
+https://vi.reactjs.org/tutorial/tutorial.html
