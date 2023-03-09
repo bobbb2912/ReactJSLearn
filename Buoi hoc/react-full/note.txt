@@ -1,0 +1,12 @@
+Buoi16: state, props, render, events=> project dau tien voi react: random number
+state: data trong 1 component, DATA laf tat ca cac kieu DL da hoc, data trong component: the hien cho trang thai de render
+props: data dung de transfer, truyen tu component nay sang component khac
+state, props thay doi => componenet se render lai
+ush: viet tat 
+
+Bai tap: tao 3 component: Menu, Body, Footer boc trong component Main
+Main: se co state: showFooter,  button toggle (click de show, hide footer)
+Main: truyen du lieu la mot list student -> Body
+Body: hien thi list student voi UI
+
+
