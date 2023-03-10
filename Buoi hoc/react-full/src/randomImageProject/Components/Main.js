@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 
 const Main = (props) => {
     const [inputNumber, setInputNumber] = useState('');
-    const [urlImage, setUrlImage] = useState({});
+    const [urlImage, setUrlImage] = useState('');
     const handleSubmit = (event) => {
         // https://picsum.photos/v2/list?limit=1
         // setInputNum
@@ -13,9 +13,9 @@ const Main = (props) => {
         console.log('value: ', {inputNumber});
         console.log('====================================');
         
-        setUrlImage('https://picsum.photos/v2/list?limit='+inputNumber);
+        setUrlImage('https://picsum.photos/v2/list?limit='+{inputNumber});
         console.log('====================================');
-        console.log('urlImg', urlImage);
+        console.log('https://picsum.photos/v2/list?limit=', {inputNumber});
         console.log('====================================');
 
     }
