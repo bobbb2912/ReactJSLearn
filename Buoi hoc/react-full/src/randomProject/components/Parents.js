@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Child from './Child';
+import Button from 'react-bootstrap/Button';
 
 const number = 20;
 
@@ -29,8 +30,9 @@ const Parent = () => {
         <div>
             {/* <h2 onClick={() => inCreeCount(10)} className='parent-click'>Parent</h2> */}
             <p>
-                <button onClick={toggleChild}>toggle child</button>
-                <button onClick={() => {inCreeCount(10)}}>incree count</button>
+                <Button variant="danger" onClick={toggleChild}>toggle child</Button>{' '}
+                <Button variant="info" onClick={() => {inCreeCount(10)}}>incree</Button>{' '}
+                {/* <button onClick={() => {inCreeCount(10)}}>incree count</button> */}
             </p>
             <p>{number}</p>
             {showLight === true ? (
