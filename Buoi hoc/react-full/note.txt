@@ -11,3 +11,12 @@ Body: hien thi list student voi UI
 btvn: su dung boottrap de lam UI sau:
 - input: dien so 1-> 10: click: hien thi mot buc anh ngau nhien
 
+Buoi17:
+- useEffect: 
+- thuc hanh randon number project
+lifecycle: vong doi cua component,tung giai doan cua component
+mounting: render ra du lieu, tu dong nhay vao ngay khi component xuat hien, khi array rong [] se tu dong chay function
+updateing: khi state, props duoc update, event nhay vap khi component mat di. Function duoc chay vao khi param duoc thay doi 
+unmounting: khi component bi huy bo, se chay vao return nam trong function
+*chu y: ham setState la ham bat dong bo 
+

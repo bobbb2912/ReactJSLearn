@@ -7,7 +7,7 @@ const Main = (props) => {
     const [urlImage, setUrlImage] = useState('');
     const handleSubmit = (event) => {
         // https://picsum.photos/v2/list?limit=1
-        // setInputNum
+        
         event.preventDefault(); 
         console.log('====================================');
         console.log('value: ', {inputNumber});
@@ -15,7 +15,7 @@ const Main = (props) => {
         
         setUrlImage('https://picsum.photos/v2/list?limit='+{inputNumber});
         console.log('====================================');
-        console.log('https://picsum.photos/v2/list?limit=', {inputNumber});
+        console.log(urlImage);
         console.log('====================================');
 
     }

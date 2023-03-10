@@ -5,9 +5,10 @@ import Main from './showFooter/components/Main';
 import RandomImage from './randomImageProject/Components/Main';
 function App() {
   return (
-    // <RandomProject/>
+    <RandomProject/>
     // <Main/>
-    <RandomImage/>
+    // <RandomImage/>
+    // <Parent1/>
   );
 }
 
