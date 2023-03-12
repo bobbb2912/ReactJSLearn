@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {Container, Row, Button, Form, InputGroup} from 'react-bootstrap';
 
 const RESULT = {
@@ -12,11 +12,15 @@ const Main = () => {
   const [inputValue, setinputValue] = useState('');
   const [result, setresult] = useState('');
   const [checkResult, setCheckResult] = useState(RESULT.doing);
+  const [disableInput, setDisableInput] = useState(false);
+  const inputReference = useRef(null);
 
+   
   const newGame = () => {
     setCountGuess(0);
     createRandom();
     setCheckResult(RESULT.doing);
+    setDisableInput(false);
   };
   const guess = () => {
     setCountGuess(countGuess + 1);
@@ -25,8 +29,8 @@ const Main = () => {
     } else if (inputValue<randomNumber) {
         setresult('so nho qua roi');
     } else {
-        setresult(`ban doan dung roi! so ngau nhien la ${randomNumber}`);
-        setCheckResult(RESULT.thang)
+      setresult(`ban doan dung roi! so ngau nhien la ${randomNumber}`);
+      setCheckResult(RESULT.thang)
     }
     setinputValue('')
   };
@@ -50,29 +54,44 @@ const Main = () => {
         }
     }
 
+    function resetGame() {
+      setDisableInput(true);
+
+      setTimeout(() => {
+        setresult('game se reset trong 5s...');
+      }, 2000);
+      setTimeout(() => {
+        newGame();
+        setresult('');
+        // inputReference.current.focus();
+      }, 5000);
+    }
 
     //   ueh
     useEffect(() => {
         createRandom();
+        if(disableInput===false) {
+          inputReference.current.focus();
+        }
     }, []);
+
+
 
     useEffect(() => {
     if(countGuess>7) {
-    setresult('ban da thua roi');
-    setCheckResult(RESULT.thua);
+      setresult('ban da thua roi');
+      setCheckResult(RESULT.thua);
+      resetGame();
     }
     }, [countGuess]);
 
     useEffect(() => {
        if (checkResult===RESULT.thang) {
-        setresult('game se reset trong 5s...');
-        setTimeout(() => {
-            newGame();
-            setresult('');
-        }, 5000);
+        setresult(`ban doan dung roi! so ngau nhien la ${randomNumber}`);
+        resetGame();
        } 
-    
-       
+   
+      
     }, [checkResult]);
   return (
     <Container>
@@ -95,7 +114,10 @@ const Main = () => {
           aria-describedby='basic-addon2'
           type='number'
           value={inputValue}
+          autoFocus
+          ref={inputReference}
           onKeyDown={handleKeyDown}
+          disabled={disableInput}
           onChange={(text) => {
             setinputValue(text.target.value);
             console.log('====================================');
