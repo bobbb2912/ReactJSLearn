@@ -10,23 +10,25 @@ const RESULT = {
     doing: 'doing',
 }
 const Main = () => {
-  const [countGuess, setCountGuess] = useState(0);
+  // uef
+  const [countGuess, setCountGuess] = useState(8);
   const [randomNumber, setrandomNumber] = useState(null);
   const [inputValue, setinputValue] = useState('');
   const [result, setresult] = useState('');
   const [checkResult, setCheckResult] = useState(RESULT.doing);
   const [disableInput, setDisableInput] = useState(false);
   const inputReference = useRef(null);
+  // const [checkCountGuess, setCheckCountGuess] = useState(8);
 
    
   const newGame = () => {
-    setCountGuess(0);
+    setCountGuess(8);
     createRandom();
     setCheckResult(RESULT.doing);
     setDisableInput(false);
   };
   const guess = () => {
-    setCountGuess(countGuess + 1);
+    setCountGuess(countGuess - 1);
     if (inputValue>randomNumber) {
         setresult('so lon qua roi')
     } else if (inputValue<randomNumber) {
@@ -40,7 +42,7 @@ const Main = () => {
   const onChangeData=(text) => {
     setinputValue(text.target.value);
     console.log('====================================');
-    console.log({inputValue});
+    console.log({randomNumber});
     console.log('====================================');
   }
 
@@ -87,7 +89,7 @@ const Main = () => {
 
 
     useEffect(() => {
-    if(countGuess>7) {
+    if(countGuess< 1) {
       setresult('ban da thua roi');
       setCheckResult(RESULT.thua);
       resetGame();
