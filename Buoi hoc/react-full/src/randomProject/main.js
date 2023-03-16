@@ -1,5 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {Container, Row, Button, Form, InputGroup} from 'react-bootstrap';
+import Body from './components/Body';
+import Header from './components/Header';
 
 const RESULT = {
     thang: 'thang',
@@ -34,6 +36,12 @@ const Main = () => {
     }
     setinputValue('')
   };
+  const onChangeData=(text) => {
+    setinputValue(text.target.value);
+    console.log('====================================');
+    console.log({inputValue});
+    console.log('====================================');
+  }
 
   const getRandom = (min, max) => {
     min = Math.ceil(min);
@@ -70,9 +78,9 @@ const Main = () => {
     //   ueh
     useEffect(() => {
         createRandom();
-        if(disableInput===false) {
-          inputReference.current.focus();
-        }
+        // if(disableInput===false) {
+        //   inputReference.current.focus();
+        // }
     }, []);
 
 
@@ -95,40 +103,17 @@ const Main = () => {
     }, [checkResult]);
   return (
     <Container>
-      <Row>
-        <div className={`fs-1 text-center m-5 fw-bold font-monospace ${checkResult===RESULT.thang? 'text-success':checkResult===RESULT.thua? 'text-danger' :'text-black'} `}>
-          Random Number (1-100)
-        </div>
-      </Row>
-      <Row>
-        <Button onClick={newGame} variant='primary'>
-          New game
-        </Button>
-      </Row>
-      <p className='my-2 font-monospace'>Số lần đoán của bạn là: {countGuess}</p>
-      <p>{randomNumber}</p>
-      <InputGroup className='mb-3'>
-        <Form.Control
-          placeholder='Input number'
-          aria-label='Input number'
-          aria-describedby='basic-addon2'
-          type='number'
-          value={inputValue}
-          autoFocus
-          ref={inputReference}
-          onKeyDown={handleKeyDown}
-          disabled={disableInput}
-          onChange={(text) => {
-            setinputValue(text.target.value);
-            console.log('====================================');
-            console.log({inputValue});
-            console.log('====================================');
-          }}
-        />
-        <Button onClick={guess} variant='success' id='button-addon2'>
-          Guess
-        </Button>
-      </InputGroup>
+      <Header checkResult={checkResult} result={RESULT}/>
+      <Body
+        newGame = {newGame}
+        countGuess = {countGuess}
+        randomNumber = {randomNumber}
+        inputValue = {inputValue}
+        handleKeyDown = {handleKeyDown}
+        disableInput = {disableInput}
+        guess = {guess}
+        onChangeData = {onChangeData}
+      />
       <p>{result}</p>
     </Container>
   );
