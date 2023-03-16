@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import {Container, Row, Button, Form, InputGroup} from 'react-bootstrap';
 import Body from './components/Body';
 import Header from './components/Header';
+import Result from './components/Result';
 
 const RESULT = {
     thang: 'thang',
@@ -114,7 +115,7 @@ const Main = () => {
         guess = {guess}
         onChangeData = {onChangeData}
       />
-      <p>{result}</p>
+     <Result result = {result}/>
     </Container>
   );
 };
