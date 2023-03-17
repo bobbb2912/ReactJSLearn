@@ -3,7 +3,7 @@ state: data trong 1 component, DATA laf tat ca cac kieu DL da hoc, data trong co
 props: data dung de transfer, truyen tu component nay sang component khac
 state, props thay doi => componenet se render lai
 ush: viet tat 
-
+rsf:
 Bai tap: tao 3 component: Menu, Body, Footer boc trong component Main
 Main: se co state: showFooter,  button toggle (click de show, hide footer)
 Main: truyen du lieu la mot list student -> Body
@@ -15,8 +15,23 @@ Buoi17:
 - useEffect: 
 - thuc hanh randon number project
 lifecycle: vong doi cua component,tung giai doan cua component
-mounting: render ra du lieu, tu dong nhay vao ngay khi component xuat hien, khi array rong [] se tu dong chay function
+mounting: render ra du lieu, event tu dong nhay vao ngay khi component xuat hien, khi array rong [] se tu dong chay function
 updateing: khi state, props duoc update, event nhay vap khi component mat di. Function duoc chay vao khi param duoc thay doi 
 unmounting: khi component bi huy bo, se chay vao return nam trong function
 *chu y: ham setState la ham bat dong bo 
+Buoi 18:
+- callback trong props
+- api -> lam viec voi api -> project nho ve api (weather app su dung api)
+- tao mot parent component-> truyen du lieu tu parent -> child
+child -> 1 button khi click reset lai data cua parent da truyen len truyen
+child -> 1 button khi click se show alert hien thi data o parent 
 
+---api
+hien thi list product https://635a75a238725a1746c6b8d3.mockapi.io/products, GET, co payload truyen vao 
+them moi sp:
+xoa sp:
+update sp:
+chi tiet sp: 
+
+BTVN: taoj api, su dung postman de tuong tac voi api
+vd: https://mockapi.io/

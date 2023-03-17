@@ -1,12 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {Button, Row} from 'react-bootstrap';
 import CartItem from './CartItem';
 
 import Child from './Child';
 
 const Parent = () => {
-  const [number, setNumber] = useState(90);
-  const [showLight, setShowLight] = useState(false); // ush
+  const [number, setNumber] = useState(0);
+  const [childData, setchildData] = useState(null);
+  const [showLight, setShowLight] = useState(true); // ush
   const [products, setProducts] = useState([
     {name: 'Iphone', price: 20000, img: 'https://picsum.photos/200'},
     {name: 'Android', price: 10000, img: 'https://picsum.photos/200'},
@@ -25,9 +26,23 @@ const Parent = () => {
   //   - function ko có tham số thì truyền trực tiếp vào event
   //   - function có tham số thì bọc trong 1 function khác
 
+  useEffect(() => {
+    console.log('check number thay đổi', number);
+  }, [number]); // mỗi lần number thay đổi sẽ chạy vào func
+
+  useEffect(() => {
+    console.log('check product thay đổi');
+  }, [products]);
+
+  const handleClickChild = (data) => {
+    console.log('log data===== ', data);
+    setchildData(data);
+  };
+
   return (
     <div>
       <h2 className='parent-click'>Parent</h2>
+      <p>{childData}</p>
       <p>
         <Button onClick={toggleChild} variant='success'>
           toggle Child
@@ -41,11 +56,13 @@ const Parent = () => {
           incree Count
         </Button>{' '}
       </p>
-
       <p>{number}</p>
-
       {showLight === true ? (
-        <Child dataFromParent={number} name={'Tung'} />
+        <Child
+          handleClickChild={handleClickChild}
+          dataFromParent={number}
+          name={'Tung'}
+        />
       ) : null}
 
       <Row className='d-flex justify-content-around align-items-center'>
