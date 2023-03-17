@@ -12,6 +12,10 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+*, p {
+  margin: 0;
+  padding: 0;
+}
 
 .App-header {
   background-color: #282c34;
@@ -34,6 +38,7 @@
 
 .parent-click {
   cursor: pointer;
+  color: rgb(54, 13, 232);
 }
 .product {
   background-color: antiquewhite;
@@ -48,6 +53,12 @@
   padding: 10px;
   margin: 20px;
   
+}
+
+.deleteData {
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
 }
 
 @keyframes App-logo-spin {

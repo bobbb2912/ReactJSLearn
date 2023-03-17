@@ -7,15 +7,18 @@ import RandomImage from './randomImageProject/Components/Main';
 // import CartItem from './randomProject/components/learn/CartItem';
 // import Parent from './randomProject/components/learn/Parent1';
 import CopyRandomProject from './copyRandomProject/main';
+import Home from './todoApp/components/index';
+
 
 
 function App() {
   return (
-    <RandomProject/>
+    // <RandomProject/>
     // <Main/>
     // <RandomImage/>
     // <Parent/>
     // <CopyRandomProject/>
+    <Home/>
   );
 }
 
