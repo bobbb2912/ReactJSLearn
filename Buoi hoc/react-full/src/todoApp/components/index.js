@@ -11,6 +11,8 @@ export default function Home()  {
     const [valuePrice, setValuePrice] = useState("");
     const [loading, setLoading] = useState(false);
     const [checkUpdate, setCheckUpdate] = useState(false);
+    const [addOrEdit, setaddOrEdit] = useState("Add");
+    const [idEdit, setidEdit] = useState(null);
     useEffect(() => {
         getListTodo()
     }, []);
@@ -26,6 +28,24 @@ export default function Home()  {
             setLoading(false);
             setError("co loi xay ra!!!");
         }
+    }
+
+    const setButton = () => {
+      if(checkUpdate) {
+        setaddOrEdit("Update");
+        editItem();
+      } else{
+        setaddOrEdit("Add");
+        addItem();
+      }
+    }
+
+    const resetData  = () => {
+      setValueTitle("");
+      setValuePrice("");
+      setValueDes("");
+      setaddOrEdit("Add");
+      setCheckUpdate(false);
     }
 
     const deleteItem = async (id) => {
@@ -49,9 +69,7 @@ export default function Home()  {
                 price: valuePrice
             });
             setLoading(false);
-            setValueTitle("");
-            setValuePrice("");
-            setValueDes("");
+            resetData();
             getListTodo();
         } catch (error) {
             setLoading(false);
@@ -59,19 +77,18 @@ export default function Home()  {
         }
     }
 
-    const editItem = async (id) => {
+    const editItem = async () => {
         try {
             setLoading(true);
-            await axios.put(`${URL}/${id}`, {
+            await axios.put(`${URL}/${idEdit}`, {
                 title: valueTitle,
                 description: valueDes,
                 price: valuePrice
             });
             setLoading(false);
             setCheckUpdate(false);
-            setValueTitle("");
-            setValuePrice("");
-            setValueDes("");
+            setidEdit(null);
+            resetData();
             getListTodo();
         } catch (error) {
             setLoading(false);
@@ -81,10 +98,18 @@ export default function Home()  {
     const setDataToForm = (item) => {
         setCheckUpdate(true)
         setValueTitle(item.title);
-            setValuePrice(item.description);
-            setValueDes(item.price);
+        setValuePrice(item.description);
+        setValueDes(item.price);
+        setidEdit(item.id);
 
     }
+    useEffect(() => {
+      // if(checkUpdate) {
+      //   setaddOrEdit("Update");
+      // } else{
+      //   setaddOrEdit("Add");
+      // }
+    }, []);
 
 
     return (
@@ -124,12 +149,12 @@ export default function Home()  {
           />
         </Form.Group>
 
-        <Button onClick={checkUpdate ? {editItem} : {addItem}} variant="primary" >
-          {checkUpdate ? <p>Update</p> : <p>Add</p> }
+        <Button onClick={setButton} variant="primary" >
+          <p>{addOrEdit}</p>
         </Button>
-        {/* <Button onClick={editItem} variant="primary">
-          Update
-        </Button> */}
+        <Button onClick={resetData} variant="primary">
+        <p>Reset</p>
+        </Button>
       </Form>
       {loading ? <p>Loading...</p> : null}
         <ul>
@@ -154,5 +179,7 @@ export default function Home()  {
         {error && <p>{error}</p>}
     </div>
     );
+
+  
 }
 
