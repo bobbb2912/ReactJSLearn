@@ -41,11 +41,13 @@ export default function Home()  {
     }
 
     const resetData  = () => {
+      setLoading(false);
       setValueTitle("");
       setValuePrice("");
       setValueDes("");
       setaddOrEdit("Add");
       setCheckUpdate(false);
+      getListTodo();
     }
 
     const deleteItem = async (id) => {
@@ -68,7 +70,7 @@ export default function Home()  {
                 description: valueDes,
                 price: valuePrice
             });
-            setLoading(false);
+            
             resetData();
             getListTodo();
         } catch (error) {

@@ -35,3 +35,9 @@ chi tiet sp:
 
 BTVN: taoj api, su dung postman de tuong tac voi api
 vd: https://mockapi.io/
+
+======> overview
+- syntax co ban: logic trong UI, logic trong style {}
+- state, props:
+- lifecycle:
+- API: 

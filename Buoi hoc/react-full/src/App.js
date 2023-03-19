@@ -8,6 +8,7 @@ import RandomImage from './randomImageProject/Components/Main';
 // import Parent from './randomProject/components/learn/Parent1';
 import CopyRandomProject from './copyRandomProject/main';
 import Home from './todoApp/components/index';
+import TodoMain from './todoProject/components/TodoMain';
 
 
 
@@ -18,7 +19,8 @@ function App() {
     // <RandomImage/>
     // <Parent/>
     // <CopyRandomProject/>
-    <Home/>
+    // <Home/>
+    <TodoMain/>
   );
 }
 
