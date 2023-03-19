@@ -9,11 +9,12 @@ function Header({handleKeyDown, setTitleInput, valueTitle, loading}) {
     return (
         <div>
             <div>
-                <h1>todos</h1>
+                <h1  className="d-flex justify-content-center text-uppercase text-primary HeaderToDo">todos</h1>
             </div>
             <div>
 
-                <InputGroup className="mb-3" placeholder="dsds" 
+                <InputGroup className="mb-3 inputTodo"
+                    
                     onKeyDown={handleKeyDown}
                     onChange = {setTitleInput}
                     value = {valueTitle}
@@ -29,7 +30,7 @@ function Header({handleKeyDown, setTitleInput, valueTitle, loading}) {
                     <Dropdown.Divider />
                     <Dropdown.Item href="#">Show all</Dropdown.Item>
                     </DropdownButton>
-                    <Form.Control aria-label="Text input with dropdown button" />
+                    <Form.Control aria-label="Text input with dropdown button" placeholder='What needs to be done?' className='border border-secondary ' />
               </InputGroup>
               {loading ? <p>Loading...</p> : null}
 
