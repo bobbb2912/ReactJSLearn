@@ -74,7 +74,6 @@
   box-sizing: border-box;
   max-width: 840px;
   margin: auto;
-  font-size: large;
   /* min-width: 500px; */
   
 
@@ -87,6 +86,10 @@
   border: solid 1px #333;
   box-shadow: 5px 10px #8c8eda;
   
+}
+
+.btnCheckTodo {
+  margin-right: 25px;
 }
 @keyframes App-logo-spin {
   from {

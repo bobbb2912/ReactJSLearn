@@ -69,6 +69,13 @@ function TodoMain() {
     const setTitleInput = (text) => {
         setValueTitle(text.target.value);
     }
+
+    const changeDoneTodo = (event) => {
+        setvalueIsDone(event.target.checked);
+        console.log('====================================');
+        console.log(event.target.checked, valueIsDone);
+        console.log('====================================');
+    }
     return (
         <div>
             <Header 
@@ -80,6 +87,9 @@ function TodoMain() {
               todos = {todos}
               deleteToDo = {deleteToDo}
               valueTitle = {valueTitle}
+              valueIsDone = {valueIsDone}
+              setvalueIsDone = {setvalueIsDone}
+              changeDoneTodo = {changeDoneTodo}
               />
             {error && <p>{error}</p>}
         </div>
