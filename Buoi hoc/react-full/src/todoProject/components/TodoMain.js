@@ -72,10 +72,15 @@ function TodoMain() {
 
     const changeDoneTodo = (event) => {
         setvalueIsDone(event.target.checked);
+
         console.log('====================================');
-        console.log(event.target.checked, valueIsDone);
+        console.log(event.target.checked);
         console.log('====================================');
     }
+
+    useEffect(() => {
+        
+    }, [valueIsDone])
     return (
         <div>
             <Header 
