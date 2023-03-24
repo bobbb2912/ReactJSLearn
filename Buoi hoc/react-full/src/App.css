@@ -91,6 +91,13 @@
 .btnCheckTodo {
   margin-right: 25px;
 }
+
+.text-isDone {
+  text-decoration: line-through;
+  opacity: 60%;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

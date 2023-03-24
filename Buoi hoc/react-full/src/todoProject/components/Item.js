@@ -20,12 +20,14 @@ function Item({ todos, deleteToDo, valueIsDone, changeDoneTodo}) {
                             <div className='d-flex'>
                                 <Form.Check aria-label="option 1" 
                                 className='btnCheckTodo' 
-                                value={valueIsDone}
-                                // checked={valueIsDone} 
-                                // onClick = {!valueIsDone} 
-                                onChange={changeDoneTodo}
+                                value={item.isDone}
+                                checked={item.isDone} 
+                                // onClick = {!item.isDone} 
+                                onChange={() => changeDoneTodo(item)}
                                 /> 
-                                <>{item.title}</>
+                               
+                            <div className={`${item.isDone ? 'text-isDone' : 'text-isNotDone'} `}>
+                                {item.title}</div>
                             </div>
                             
                             <CloseButton className='btn btn-danger' onClick={() => deleteToDo(item.id)}/>

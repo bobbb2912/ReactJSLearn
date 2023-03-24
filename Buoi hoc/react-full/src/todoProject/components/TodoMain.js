@@ -24,6 +24,7 @@ function TodoMain() {
     const resetData  = () => {
         setLoading(false);
         setValueTitle("");
+        // setTitleInput(null);
         getListTodo();
       }
 
@@ -66,22 +67,45 @@ function TodoMain() {
             setError("co loi xay ra!!!");
         }
     }
+
+    const editTodo = async (id) => {
+        try {
+          setLoading(true);
+          await axios.put(`${URL}/${id}`, {
+            title: valueTitle,
+            isDone: valueIsDone
+          });
+          resetData();
+        } catch (error) {
+          setLoading(false);
+          setError("Có lỗi xảy ra");
+        }
+      };
     const setTitleInput = (text) => {
         setValueTitle(text.target.value);
     }
 
-    const changeDoneTodo = (event) => {
-        setvalueIsDone(event.target.checked);
+    const changeDoneTodo = (item) => {
+        // setvalueIsDone(event.target.checked);
+        setvalueIsDone(!valueIsDone);
+        setValueTitle(item.title)
+        editTodo(item.id);
         console.log('====================================');
-        console.log(event.target.checked, valueIsDone);
+        console.log(valueIsDone, valueTitle);
         console.log('====================================');
     }
+
+    // useEffect(() => {
+    //     setvalueIsDone(!valueIsDone)
+    // }, [valueIsDone]);
+
     return (
         <div>
             <Header 
                 handleKeyDown = {handleKeyDown}
                 setTitleInput = {setTitleInput}
                 loading = {loading}
+                valueTitle = {valueTitle}
             />
             <Item
               todos = {todos}
@@ -90,6 +114,7 @@ function TodoMain() {
               valueIsDone = {valueIsDone}
               setvalueIsDone = {setvalueIsDone}
               changeDoneTodo = {changeDoneTodo}
+              editTodo = {editTodo}
               />
 
             {error && <p>{error}</p>}
