@@ -27,7 +27,7 @@ export default function Body({
           aria-describedby='basic-addon2'
           type='number'
           value={inputValue}
-        //   autoFocus
+          autoFocus
         //   ref={inputReference}
           onKeyDown={handleKeyDown}
           disabled={disableInput}

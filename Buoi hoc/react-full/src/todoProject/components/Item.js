@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 
 const URL = "https://64170268205bdf0a1d7e0d5f.mockapi.io/Todo";
 
-function Item({ todos, deleteToDo, valueIsDone, setvalueIsDone, changeDoneTodo}) {
+function Item({ todos, deleteToDo, valueIsDone, changeDoneTodo}) {
 
     
     return (
@@ -20,10 +20,12 @@ function Item({ todos, deleteToDo, valueIsDone, setvalueIsDone, changeDoneTodo})
                             <div className='d-flex'>
                                 <Form.Check aria-label="option 1" 
                                 className='btnCheckTodo' 
-                                checked={item.isDone} 
-                                onChange = {changeDoneTodo}
+                                value={valueIsDone}
+                                // checked={valueIsDone} 
+                                // onClick = {!valueIsDone} 
+                                onChange={changeDoneTodo}
                                 /> 
-                                {item.title}
+                                <>{item.title}</>
                             </div>
                             
                             <CloseButton className='btn btn-danger' onClick={() => deleteToDo(item.id)}/>
