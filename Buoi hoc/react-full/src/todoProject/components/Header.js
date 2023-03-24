@@ -17,7 +17,7 @@ function Header({handleKeyDown, setTitleInput, valueTitle, loading}) {
                     
                     onKeyDown={handleKeyDown}
                     onChange = {setTitleInput}
-                    // value = {valueTitle}
+                    value = {valueTitle}
                     >
                     <DropdownButton
                     variant="outline-secondary"

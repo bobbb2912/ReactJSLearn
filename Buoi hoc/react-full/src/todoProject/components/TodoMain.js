@@ -12,12 +12,13 @@ function TodoMain() {
     const [valueIsDone, setvalueIsDone] = useState(false);
     
     useEffect(() => {
-        getListTodo()
+        getListTodo();
     }, []);
 
  
 
     const handleKeyDown = (event) => {
+        setvalueIsDone(false);
         if(event.keyCode===13) {
             addTodo();
         }
@@ -28,7 +29,6 @@ function TodoMain() {
         
         // setvalueIsDone(false);
         // setValueTitle("");
-        // setTitleInput(null);
         getListTodo();
         setError("");
         console.log('resetData',valueIsDone, valueTitle);
@@ -60,7 +60,7 @@ function TodoMain() {
             resetData();
             // setValueTitle("");
             // setvalueIsDone(false);
-            getListTodo();
+            // getListTodo();
 
         } catch (error) {
             setLoading(false);
@@ -87,7 +87,7 @@ function TodoMain() {
             title: valueTitle,
             isDone: valueIsDone
           });
-          resetData();
+        //   resetData();
           console.log('edittodo',valueIsDone, valueTitle);
 
           getListTodo();
@@ -100,7 +100,7 @@ function TodoMain() {
         console.log('setTitleInput1',valueIsDone, valueTitle);
 
         setValueTitle(text.target.value);
-        setvalueIsDone(false);
+        // setvalueIsDone(false);
         console.log('setTitleInput2',valueIsDone, valueTitle);
 
     }
@@ -108,7 +108,7 @@ function TodoMain() {
     const changeDoneTodo = (item) => {
         // setvalueIsDone(event.target.checked);
         setvalueIsDone(!item.isDone);
-        // setValueTitle(item.title)
+        setValueTitle(item.title)
         editTodo(item.id);
         console.log('changedonetodo',valueIsDone, valueTitle);
 
