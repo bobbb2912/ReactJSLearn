@@ -41,3 +41,15 @@ vd: https://mockapi.io/
 - state, props:
 - lifecycle:
 - API: 
+Buoi21: thuc hanh voi API
+=> thuc hanh lam wweb du bao thoi tiet 
+https://openweathermap.org/
+// api complete google
+https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete?csw=1
+//////////
+http://api.openweathermap.org/geo/1.0/direct?q=Tu Son, VN&limit=5&appid=f8749a170eaff3ecb72021600d974ada
+ api tra ve toa do cua thanh pho truyen vao
+ ////////////////
+ https://api.openweathermap.org/data/2.5/weather?lat=21.0294498&lon=105.8544441&appid=f8749a170eaff3ecb72021600d974ada&units=metric&lang=vi
+dư bao thơi tiet hien tai theo toa do
+////////////////

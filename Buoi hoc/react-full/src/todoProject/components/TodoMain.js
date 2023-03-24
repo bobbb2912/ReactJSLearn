@@ -105,9 +105,13 @@ function TodoMain() {
 
     }
 
-    const changeDoneTodo = (item) => {
+    const changeDoneTodo = (e, item) => {
         // setvalueIsDone(event.target.checked);
-        setvalueIsDone(!item.isDone);
+        console.log('====================================');
+        console.log(e.target.checked);
+        console.log(item);
+        console.log('====================================');
+        setvalueIsDone(e.target.checkednb );
         setValueTitle(item.title)
         editTodo(item.id);
         console.log('changedonetodo',valueIsDone, valueTitle);
