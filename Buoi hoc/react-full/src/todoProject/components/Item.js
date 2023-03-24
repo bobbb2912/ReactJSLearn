@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 
 const URL = "https://64170268205bdf0a1d7e0d5f.mockapi.io/Todo";
 
-function Item({ todos, deleteToDo, valueIsDone, changeDoneTodo}) {
+function Item({ todos, deleteToDo, valueIsDone, changeDoneTodo, setdataItem}) {
 
     
     return (

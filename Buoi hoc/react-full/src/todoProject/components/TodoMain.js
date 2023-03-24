@@ -15,6 +15,8 @@ function TodoMain() {
         getListTodo()
     }, []);
 
+ 
+
     const handleKeyDown = (event) => {
         if(event.keyCode===13) {
             addTodo();
@@ -23,9 +25,15 @@ function TodoMain() {
 
     const resetData  = () => {
         setLoading(false);
-        setValueTitle("");
+        
+        // setvalueIsDone(false);
+        // setValueTitle("");
         // setTitleInput(null);
         getListTodo();
+        setError("");
+        console.log('resetData',valueIsDone, valueTitle);
+
+
       }
 
     const getListTodo = async () => {
@@ -48,9 +56,12 @@ function TodoMain() {
                 title: valueTitle,
                 isDone: valueIsDone
             });
-            
+            console.log('addtodo',valueIsDone, valueTitle);
             resetData();
+            // setValueTitle("");
+            // setvalueIsDone(false);
             getListTodo();
+
         } catch (error) {
             setLoading(false);
             setError("Có lỗi xảy ra");
@@ -60,7 +71,8 @@ function TodoMain() {
         setLoading(true);
         try {
             await axios.delete(`${URL}/${id}`);
-            setLoading(false);
+            // setLoading(false);
+            resetData();
             getListTodo();
         } catch (error) {
             setLoading(false);
@@ -75,30 +87,36 @@ function TodoMain() {
             title: valueTitle,
             isDone: valueIsDone
           });
-        //   resetData();
-        getListTodo();
+          resetData();
+          console.log('edittodo',valueIsDone, valueTitle);
+
+          getListTodo();
         } catch (error) {
           setLoading(false);
           setError("Có lỗi xảy ra");
         }
       };
     const setTitleInput = (text) => {
+        console.log('setTitleInput1',valueIsDone, valueTitle);
+
         setValueTitle(text.target.value);
+        setvalueIsDone(false);
+        console.log('setTitleInput2',valueIsDone, valueTitle);
+
     }
 
     const changeDoneTodo = (item) => {
         // setvalueIsDone(event.target.checked);
-        setvalueIsDone(!valueIsDone);
+        setvalueIsDone(!item.isDone);
         // setValueTitle(item.title)
         editTodo(item.id);
-        console.log('====================================');
-        console.log(valueIsDone, valueTitle);
-        console.log('====================================');
+        console.log('changedonetodo',valueIsDone, valueTitle);
+
     }
 
+   
     // useEffect(() => {
-    //     setvalueIsDone(!valueIsDone)
-    // }, [valueIsDone]);
+    // }, [valueIsDone, valueTitle]);
 
     return (
         <div>
@@ -119,6 +137,8 @@ function TodoMain() {
               />
 
             {error && <p>{error}</p>}
+            {loading ? <p>Loading...</p> : null}
+
         </div>
     );
 }

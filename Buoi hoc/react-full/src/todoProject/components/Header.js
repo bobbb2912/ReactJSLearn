@@ -17,7 +17,7 @@ function Header({handleKeyDown, setTitleInput, valueTitle, loading}) {
                     
                     onKeyDown={handleKeyDown}
                     onChange = {setTitleInput}
-                    value = {valueTitle}
+                    // value = {valueTitle}
                     >
                     <DropdownButton
                     variant="outline-secondary"
@@ -32,7 +32,7 @@ function Header({handleKeyDown, setTitleInput, valueTitle, loading}) {
                     </DropdownButton>
                     <Form.Control aria-label="Text input with dropdown button" placeholder='What needs to be done?' className='border border-secondary ' />
               </InputGroup>
-              {loading ? <p>Loading...</p> : null}
+              {/* {loading ? <p>Loading...</p> : null} */}
 
             </div>
         </div>
