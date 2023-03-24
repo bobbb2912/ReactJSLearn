@@ -70,17 +70,12 @@ function TodoMain() {
         setValueTitle(text.target.value);
     }
 
-    const changeDoneTodo = () => {
-        // setvalueIsDone(event.target.checked);
-        setvalueIsDone(!valueIsDone);
+    const changeDoneTodo = (event) => {
+        setvalueIsDone(event.target.checked);
         console.log('====================================');
-        console.log(valueIsDone);
+        console.log(event.target.checked, valueIsDone);
         console.log('====================================');
     }
-
-    // useEffect(() => {
-    // }, [valueIsDone]);
-
     return (
         <div>
             <Header 
