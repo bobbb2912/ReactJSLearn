@@ -75,7 +75,8 @@ function TodoMain() {
             title: valueTitle,
             isDone: valueIsDone
           });
-          resetData();
+        //   resetData();
+        getListTodo();
         } catch (error) {
           setLoading(false);
           setError("Có lỗi xảy ra");
@@ -88,7 +89,7 @@ function TodoMain() {
     const changeDoneTodo = (item) => {
         // setvalueIsDone(event.target.checked);
         setvalueIsDone(!valueIsDone);
-        setValueTitle(item.title)
+        // setValueTitle(item.title)
         editTodo(item.id);
         console.log('====================================');
         console.log(valueIsDone, valueTitle);

@@ -20,6 +20,7 @@ function Item({ todos, deleteToDo, valueIsDone, changeDoneTodo}) {
                             <div className='d-flex'>
                                 <Form.Check aria-label="option 1" 
                                 className='btnCheckTodo' 
+                                defaultChecked={false}
                                 value={item.isDone}
                                 checked={item.isDone} 
                                 // onClick = {!item.isDone} 
