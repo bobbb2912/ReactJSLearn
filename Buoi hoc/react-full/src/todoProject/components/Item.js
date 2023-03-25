@@ -69,8 +69,8 @@ function Item({ todos, deleteToDo, valueIsDone, changeDoneTodo,
                         </div>
                     </>): action === TODO.clearCompleted ? 
                     <>
-                    {clearCompleted}
-                    {/* <div className="parent-click font-weight-light d-flex flex-row align-items-center justify-content-between" >
+                     {async ()=> await{clearCompleted}}
+                    <div className="parent-click font-weight-light d-flex flex-row align-items-center justify-content-between" >
                         <div className='d-flex'>
                             <Form.Check aria-label="option 1" 
                             className='btnCheckTodo' 
@@ -84,7 +84,7 @@ function Item({ todos, deleteToDo, valueIsDone, changeDoneTodo,
                         </div>
                         
                         <CloseButton className='btn btn-danger' onClick={() => deleteToDo(item.id)}/>
-                    </div> */}
+                    </div>
                 </>
                     : action==TODO.all}
 

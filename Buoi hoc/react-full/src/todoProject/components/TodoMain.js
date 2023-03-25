@@ -170,7 +170,7 @@ function TodoMain() {
         if(todoDelete.length>0) {
             todoDelete.forEach(item => {
                 deleteToDo(item.id);
-                getListTodo();
+                // getListTodo();
             });
         } 
        
