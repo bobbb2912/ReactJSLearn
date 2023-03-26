@@ -9,7 +9,7 @@ import RandomImage from './randomImageProject/Components/Main';
 import CopyRandomProject from './copyRandomProject/main';
 import Home from './todoApp/components/index';
 import TodoMain from './todoProject/components/TodoMain';
-
+import WeatherMap from './WeatherMap/component/main';
 
 
 function App() {
@@ -20,7 +20,8 @@ function App() {
     // <Parent/>
     // <CopyRandomProject/>
     // <Home/>
-    <TodoMain/>
+    // <TodoMain/>
+    <WeatherMap/>
   );
 }
 
