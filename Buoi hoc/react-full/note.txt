@@ -53,3 +53,14 @@ http://api.openweathermap.org/geo/1.0/direct?q=Tu Son, VN&limit=5&appid=f8749a17
  https://api.openweathermap.org/data/2.5/weather?lat=21.0294498&lon=105.8544441&appid=f8749a170eaff3ecb72021600d974ada&units=metric&lang=vi
 dư bao thơi tiet hien tai theo toa do
 ////////////////
+spread syntax
+https://viblo.asia/p/su-dung-spread-operator-trong-javascript-gDVK24welLj
+
+Buoi 22: redux
+view: UI
+state (store): data
+action: nhung hanh dong dung de thay doi data 
+
+store la noi luu tru nhieu data 
+Reducer: giong nhu cac bang trong database.
+dispatch: thuc thi actions. 

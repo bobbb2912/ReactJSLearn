@@ -10,6 +10,8 @@ import CopyRandomProject from './copyRandomProject/main';
 import Home from './todoApp/components/index';
 import TodoMain from './todoProject/components/TodoMain';
 import WeatherMap from './WeatherMap/component/main';
+// import ReduxTestApp from "./redux_test";
+import ReduxApp from "./redux/index";
 
 
 function App() {
@@ -21,7 +23,8 @@ function App() {
     // <CopyRandomProject/>
     // <Home/>
     // <TodoMain/>
-    <WeatherMap/>
+    // <WeatherMap/>
+    <ReduxApp/>
   );
 }
 
