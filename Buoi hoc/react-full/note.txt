@@ -65,3 +65,13 @@ store la noi luu tru nhieu data
 Reducer: giong nhu cac bang trong database.
 dispatch: thuc thi actions. 
 
+// add redux toolket and react-redux 
+npm install @reduxjs/toolkit react-redux
+
+step setup redux: 
+- add thư viện react-redux, redux-toolkit
+- tạo store, bọc store trong toàn bộ app
+- tạo slice (reducer)
+-import reducer vao store
+- lấy dữ liệu ra sử dụng useSelector
+tool debug: redux devtool

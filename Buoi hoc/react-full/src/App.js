@@ -12,7 +12,6 @@ import './App.css';
 import WeatherMap from './WeatherMap/component/main';
 // import ReduxTestApp from "./redux_test";
 import ReduxApp from './redux_test/index'
-
 function App() {
   return (
     // <RandomProject/>
