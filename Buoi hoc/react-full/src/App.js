@@ -1,18 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-import RandomProject from './randomProject/main';
+// import RandomProject from './randomProject/main';
 
-import Main from './showFooter/components/Main';
-import RandomImage from './randomImageProject/Components/Main';
+// import Main from './showFooter/components/Main';
+// import RandomImage from './randomImageProject/Components/Main';
 // import CartItem from './randomProject/components/learn/CartItem';
 // import Parent from './randomProject/components/learn/Parent1';
-import CopyRandomProject from './copyRandomProject/main';
-import Home from './todoApp/components/index';
-import TodoMain from './todoProject/components/TodoMain';
+// import CopyRandomProject from './copyRandomProject/main';
+// import Home from './todoApp/components/index';
+// import TodoMain from './todoProject/components/TodoMain';
 import WeatherMap from './WeatherMap/component/main';
 // import ReduxTestApp from "./redux_test";
-import ReduxApp from "./redux/index";
-
+import ReduxApp from './redux_test/index'
 
 function App() {
   return (

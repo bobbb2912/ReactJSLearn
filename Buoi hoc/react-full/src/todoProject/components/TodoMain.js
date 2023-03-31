@@ -53,7 +53,7 @@ function TodoMain() {
         getListTodo();
         setError("");
         console.log('resetData',valueIsDone, valueTitle);
-      };
+    };
 
     const getListTodo = async () => {
         setLoading(true);
@@ -85,7 +85,8 @@ function TodoMain() {
             setLoading(false);
             setError("Có lỗi xảy ra");
         }
-    }
+    }; 
+
     const deleteToDo = async (id) => {
         setLoading(true);
         try {
@@ -95,7 +96,7 @@ function TodoMain() {
             setLoading(false);
             setError("co loi xay ra!!!");
         }
-    }
+    };
 
     const editTodo = async (id, item) => {
         try {
@@ -128,7 +129,7 @@ function TodoMain() {
         editTodo(item.id, item);
         console.log('changedonetodo2',valueIsDone, valueTitle);
 
-    }
+    };
 
     const active = () => {
         setAction(TODO.active);
@@ -143,36 +144,37 @@ function TodoMain() {
     };
 
     const clearCompleted = () => {
-        setAction(TODO.clearCompleted);
-        setodoDelete([]);
-        console.log('====================================');
-        console.log(action);
-        console.log('====================================');
-        // const [todoDelete, setodoDelete] = useState([]);
-        if(todos!=null) {
-             todos.filter((item) => {
-                 if(item.isDone==true) {
-                    console.log('====================================');
-                    console.log(item);
-                    console.log('====================================');
-                    //  deleteToDo(item.id);
-                    setodoDelete(old => [...old, item]);
-                }
-                // getListTodo();
-            });
-            // settodoDelete(todos.filter(item => {
-            //     return item.isDone===true;
-            // }));
-        }
+        // setAction(TODO.clearCompleted);
+        // setodoDelete([]);
         // console.log('====================================');
-        console.log('todoDelete', todoDelete);
+        // console.log(action);
         // console.log('====================================');
-        if(todoDelete.length>0) {
-            todoDelete.forEach(item => {
-                deleteToDo(item.id);
-                // getListTodo();
-            });
-        } 
+        // // const [todoDelete, setodoDelete] = useState([]);
+        // if(todos!=null) {
+        //      todos.filter((item) => {
+        //          if(item.isDone===true) {
+        //             console.log('====================================');
+        //             console.log(item);
+        //             console.log('====================================');
+        //             //  deleteToDo(item.id);
+        //             setodoDelete(old => [...old, item]);
+        //         }
+        //         // getListTodo();
+        //     });
+        //     // settodoDelete(todos.filter(item => {
+        //     //     return item.isDone===true;
+        //     // }));
+        // }
+        // // console.log('====================================');
+        // console.log('todoDelete', todoDelete);
+        // // console.log('====================================');
+        // if(todoDelete.length>0) {
+        //     todoDelete.forEach(item => {
+        //         deleteToDo(item.id);
+        //         // getListTodo();
+        //     });
+        // } 
+        
        
     };
 

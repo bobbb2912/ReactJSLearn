@@ -64,3 +64,4 @@ action: nhung hanh dong dung de thay doi data
 store la noi luu tru nhieu data 
 Reducer: giong nhu cac bang trong database.
 dispatch: thuc thi actions. 
+
