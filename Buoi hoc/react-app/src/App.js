@@ -13,7 +13,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import TodoMain from './todoProject/components/TodoMain';
 import WeatherMap from './WeatherMap/component/main';
 // import ReduxTestApp from "./redux_test";
-import ReduxApp from './redux_test/index'
+import ReduxApp from './redux_test/index';
+import Counter from './redux_test/components/Counter';
+
 function App() {
   return (
     // <RandomProject/>
@@ -24,7 +26,7 @@ function App() {
     // <Home/>
     // <TodoMain/>
     // <WeatherMap/>
-    <ReduxApp/>
+    <Counter/>
   );
 }
 
