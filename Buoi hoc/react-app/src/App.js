@@ -15,6 +15,7 @@ import WeatherMap from './WeatherMap/component/main';
 // import ReduxTestApp from "./redux_test";
 import ReduxApp from './redux_test/index';
 import Counter from './redux_test/components/Counter';
+import Post from './redux_test/components/Post';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
     // <Home/>
     // <TodoMain/>
     // <WeatherMap/>
-    <Counter/>
+    <Post/>
   );
 }
 
