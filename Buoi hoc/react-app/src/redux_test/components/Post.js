@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, Row } from 'react-bootstrap';
+import { Button, Card, Form, Row } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux'
 import { deletePost, filterPost } from '../feature/postSlice';
 
@@ -15,11 +15,27 @@ export default function Post() {
   return (
     <div>
         <h1>POST LIST</h1>
+        <Form>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Title</Form.Label>
+                  <Form.Control type="" placeholder="Enter Title" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Content</Form.Label>
+                  <Form.Control type="" placeholder="Content" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                  Edit Post 
+                </Button>
+              </Form>
+              
         <Button onClick={filter}>Filter post</Button>
         <Row>
         {posts.map((item, index) => {
             return (
-                 
+                
                 <Card key={item.id} style={{ width: '18rem', marginRight:'10px', marginBottom:'10px' }}>
                 <Card.Img variant="top" src="holder.js/100px180" />
                 <Card.Body>
@@ -28,8 +44,6 @@ export default function Post() {
                     <Button onClick={() => deleteItem(item.id)} variant="danger">Delete</Button>
                 </Card.Body>
                 </Card>
-                
-            
             );
         })}
          </Row>
