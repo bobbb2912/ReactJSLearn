@@ -1,14 +1,15 @@
 import React, {useEffect, useState} from 'react'
 import { Button, Card, Row } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux'
-import { deletePost, filterPost, getListPost, resetPost } from '../feature/postSlice';
+import {  deletePostAPI, filterPost, getListPost, resetPost } from '../feature/postSlice';
 
 export default function Post() {
     const posts = useSelector((state) => state.postReducer);
     const dispatch = useDispatch();
     const [postLocal, setPostLocal] = useState(null);
+    
     const deleteItem = (id) => {
-        dispatch(deletePost(id));
+        dispatch(deletePostAPI(id));
     };
     const filter = (rate) => {
         let convertPost = JSON.parse(JSON.stringify(postLocal.data));
@@ -22,17 +23,17 @@ export default function Post() {
     const reset = () => {
         setPostLocal(posts);
     }
-    useEffect(() => {
-       dispatch(getListPost());
-    }, []);
     const resetFilterRedux = () => {
+        // setPostLocal(posts);
         dispatch(resetPost());
-    }
-
+      }; 
     useEffect(() => {
         setPostLocal(posts);
+      }, [posts]);
     
-    }, [posts]);
+      useEffect(() => {
+        dispatch(getListPost('tham so truyen vao'));
+      }, []);
   return (
     <div>
         <h1>POST LIST</h1>
@@ -44,7 +45,7 @@ export default function Post() {
         <Button style={{marginLeft:'10px', marginRight:'10px'}} 
         onClick={() => resetFilterRedux()}>Reset filter post redux</Button>
         <Row>
-        {posts.dataFilter  ? posts.dataFilter.map((item, index) => {
+        {posts.dataFilter  ?  posts.dataFilter.map((item, index) => {
             return (
                  
                 <Card key={item.id} style={{ width: '18rem', marginRight:'10px', marginBottom:'10px' }}>

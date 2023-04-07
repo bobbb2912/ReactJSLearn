@@ -16,6 +16,16 @@ export const getListPost = createAsyncThunk('products/getList',
     console.log('res',res);
      return res.data;
  });
+export const deletePostAPI = createAsyncThunk('products/delete',
+ async(arg, thunkApi) =>{
+    // console.log('bb arg', arg);
+    // console.log('bb thunkApi getState', thunkApi.getState);
+    // console.log('bb thunkApi dispatch', thunkApi.dispatch(filterPost(2)));
+    const res = await axios.get(`https://reactjs-9478f-default-rtdb.firebaseio.com/products/${arg}.json`);
+    console.log('res',res);
+    thunkApi.dispatch(getListPost());
+     return res.data;
+ });
 
 const postSlice = createSlice({
   name: "post",
@@ -63,6 +73,16 @@ const postSlice = createSlice({
             state.data=action.payload;
         }) 
         .addCase(getListPost.rejected, (state, action) => {
+            state.loading=false;
+            state.error = 'error';
+        }) 
+        .addCase(deletePostAPI.pending, (state, action) => {
+            state.loading=true;
+        }) 
+        .addCase(deletePostAPI.fulfilled, (state, action) => {
+            state.loading=false;
+        }) 
+        .addCase(deletePostAPI.rejected, (state, action) => {
             state.loading=false;
             state.error = 'error';
         }) 
