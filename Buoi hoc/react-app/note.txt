@@ -78,4 +78,10 @@ tool debug: redux devtool
 //////////
 Buoi24:
 - chu y: luon luon linh dong giua state (data, action trong component) va store(data trong redux)
- 
+ truoc day:
+ - tuong tac api: useState, axios
+ - flow call api voi state:
+ + su dung axios call api => set lai state 
+ - flow call api voi redux:
+ + call api => dispatch action de xet du lieu val redux => dai dong, handle case 
+ + su dung middleware trong redux de call api 

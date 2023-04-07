@@ -1,15 +1,21 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import axios from 'axios';
 
 const initialState = {
-    data:[
-        {id:'1', content:'Day la bai viet so 1', title:'Bai viet 1', rate: 3},
-        {id:'2', content:'Hello', title:'Bai viet 2', rate: 2},
-        {id:'3', content:'Irure eiusmod qui qui est commodo eu dolor nostrud pariatur exercitation fugiat Lorem qui sint.', title:'Bai viet 3', rate: 5},
-        {id:'4', content:'Amet consequat ut sunt nulla nulla excepteur sint nostrud consequat est excepteur pariatur duis eiusmod. Sit dolore excepteur minim est quis sunt labore dolore aliquip nulla consequat ex tempor. Consequat et pariatur Lorem ipsum do labore amet irure cupidatat. Nostrud ut aliqua ut fugiat elit eu nulla pariatur enim dolore sunt velit aliquip. Ex Lorem nostrud magna et laboris qui mollit cillum magna nulla reprehenderit.', title:'Bai viet 4', rate: 5},
-
-    ],
-    dataFilter:null
+    data:{},
+    dataFilter:null,
+    loading: false,
+    error: null
 }
+export const getListPost = createAsyncThunk('products/getList',
+ async(arg, thunkApi) =>{
+    console.log('bb arg', arg);
+    console.log('bb thunkApi getState', thunkApi.getState);
+    console.log('bb thunkApi dispatch', thunkApi.dispatch(filterPost(2)));
+    const res = await axios.get('https://reactjs-9478f-default-rtdb.firebaseio.com/products.json');
+    console.log('res',res);
+     return res.data;
+ });
 
 const postSlice = createSlice({
   name: "post",
@@ -31,20 +37,35 @@ const postSlice = createSlice({
         return newData;
     },
     editPost: (state, action) => {
-        const data = state.filter((i) => i.id===action.payload);
+        // const data = state.filter((i) => i.id===action.payload);
         
     },
     filterPost: (state, action) => {
 // loc tat ca ca bai post co rate >= action.payload
         const convertData = JSON.parse(JSON.stringify(state));
-        const dataFilter = convertData.data.filter((i) => i.rate>action.payload);
-         convertData.dataFilter = dataFilter;
-        return convertData;
+        const dataFilter = Object.keys(convertData.data).filter(
+        (i) => convertData.data[i].rate>action.payload);
+        
+        state.dataFilter = dataFilter;
     },
     resetPost: (state, action) => {
 // loc tat ca ca bai post co rate >= action.payload
         state.dataFilter = null;
     },
+  },
+  extraReducers(builder) {
+    builder
+        .addCase(getListPost.pending, (state, action) => {
+            state.loading=true;
+        }) 
+        .addCase(getListPost.fulfilled, (state, action) => {
+            state.loading=false;
+            state.data=action.payload;
+        }) 
+        .addCase(getListPost.rejected, (state, action) => {
+            state.loading=false;
+            state.error = 'error';
+        }) 
   }
 });
 
