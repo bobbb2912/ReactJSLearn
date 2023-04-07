@@ -1,0 +1,81 @@
+Buoi16: state, props, render, events=> project dau tien voi react: random number
+state: data trong 1 component, DATA laf tat ca cac kieu DL da hoc, data trong component: the hien cho trang thai de render
+props: data dung de transfer, truyen tu component nay sang component khac
+state, props thay doi => componenet se render lai
+ush: viet tat 
+rsf:
+Bai tap: tao 3 component: Menu, Body, Footer boc trong component Main
+Main: se co state: showFooter,  button toggle (click de show, hide footer)
+Main: truyen du lieu la mot list student -> Body
+Body: hien thi list student voi UI
+btvn: su dung boottrap de lam UI sau:
+- input: dien so 1-> 10: click: hien thi mot buc anh ngau nhien
+
+Buoi17:
+- useEffect: 
+- thuc hanh randon number project
+lifecycle: vong doi cua component,tung giai doan cua component
+mounting: render ra du lieu, event tu dong nhay vao ngay khi component xuat hien, khi array rong [] se tu dong chay function
+updateing: khi state, props duoc update, event nhay vap khi component mat di. Function duoc chay vao khi param duoc thay doi 
+unmounting: khi component bi huy bo, se chay vao return nam trong function
+*chu y: ham setState la ham bat dong bo 
+Buoi 18:
+- callback trong props
+- api -> lam viec voi api -> project nho ve api (weather app su dung api)
+- tao mot parent component-> truyen du lieu tu parent -> child
+child -> 1 button khi click reset lai data cua parent da truyen len truyen
+child -> 1 button khi click se show alert hien thi data o parent 
+
+---api
+hien thi list product https://635a75a238725a1746c6b8d3.mockapi.io/products, GET, co payload truyen vao 
+them moi sp:
+xoa sp:
+update sp:
+chi tiet sp: 
+
+BTVN: taoj api, su dung postman de tuong tac voi api
+vd: https://mockapi.io/
+
+======> overview
+- syntax co ban: logic trong UI, logic trong style {}
+- state, props:
+- lifecycle:
+- API: 
+Buoi21: thuc hanh voi API
+=> thuc hanh lam wweb du bao thoi tiet 
+https://openweathermap.org/
+// api complete google
+https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete?csw=1
+//////////
+http://api.openweathermap.org/geo/1.0/direct?q=Tu Son, VN&limit=5&appid=f8749a170eaff3ecb72021600d974ada
+ api tra ve toa do cua thanh pho truyen vao
+ ////////////////
+ https://api.openweathermap.org/data/2.5/weather?lat=21.0294498&lon=105.8544441&appid=f8749a170eaff3ecb72021600d974ada&units=metric&lang=vi
+dư bao thơi tiet hien tai theo toa do
+////////////////
+spread syntax
+https://viblo.asia/p/su-dung-spread-operator-trong-javascript-gDVK24welLj
+
+Buoi 22: redux
+view: UI
+state (store): data
+action: nhung hanh dong dung de thay doi data 
+
+store la noi luu tru nhieu data 
+Reducer: giong nhu cac bang trong database.
+dispatch: thuc thi actions. 
+
+// add redux toolket and react-redux 
+npm install @reduxjs/toolkit react-redux
+
+step setup redux: 
+- add thư viện react-redux, redux-toolkit
+- tạo store, bọc store trong toàn bộ app
+- tạo slice (reducer)
+-import reducer vao store
+- lấy dữ liệu ra sử dụng useSelector
+tool debug: redux devtool
+//////////
+Buoi24:
+- chu y: luon luon linh dong giua state (data, action trong component) va store(data trong redux)
+ 
