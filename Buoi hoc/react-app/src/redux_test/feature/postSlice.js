@@ -31,7 +31,8 @@ const postSlice = createSlice({
         return newData;
     },
     editPost: (state, action) => {
-
+        const data = state.filter((i) => i.id===action.payload);
+        
     },
     filterPost: (state, action) => {
 // loc tat ca ca bai post co rate >= action.payload

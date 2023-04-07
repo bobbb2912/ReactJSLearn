@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { Button, Card, Row } from 'react-bootstrap';
+
 import { useSelector, useDispatch } from 'react-redux'
 import { deletePost, filterPost, resetPost } from '../feature/postSlice';
 
@@ -33,14 +34,10 @@ export default function Post() {
   return (
     <div>
         <h1>POST LIST</h1>
-        <Button onClick={() => filter(3)}>Filter post state</Button>
-        <Button style={{marginLeft:'10px', marginRight:'10px'}} 
-         onClick={() => reset()}>Reset post</Button>
-        <Button style={{marginLeft:'10px', marginRight:'10px'}} 
-        onClick={() => filterRedux(3)}>Filter post redux</Button>
-        <Button style={{marginLeft:'10px', marginRight:'10px'}} 
-        onClick={() => resetFilterRedux()}>Reset filter post redux</Button>
 
+
+              
+        <Button onClick={filter}>Filter post</Button>
         <Row>
         {posts.dataFilter ? posts.dataFilter.map((item, index) => {
             return (
@@ -59,7 +56,7 @@ export default function Post() {
         }): 
         posts.data.map((item, index) => {
             return (
-                 
+                
                 <Card key={item.id} style={{ width: '18rem', marginRight:'10px', marginBottom:'10px' }}>
                 <Card.Img variant="top" src="holder.js/100px180" />
                 <Card.Body>
@@ -68,8 +65,6 @@ export default function Post() {
                     <Button onClick={() => deleteItem(item.id)} variant="danger">Delete</Button>
                 </Card.Body>
                 </Card>
-                
-            
             );
         })}
          </Row>
