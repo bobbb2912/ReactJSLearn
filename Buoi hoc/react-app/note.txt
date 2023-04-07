@@ -85,3 +85,22 @@ Buoi24:
  - flow call api voi redux:
  + call api => dispatch action de xet du lieu val redux => dai dong, handle case 
  + su dung middleware trong redux de call api 
+
+ ///////Buoi25
+ - cấu trúc, structure của 1 dự án, router
+ - cơ chế bảo mật authentication 
+ - cấu hình custom axios 
+ - 
+
+Router:
+ - lib:react router, react navigation
+ - cai dat, khai bao: 
+ +npm install react-router-dom
+ +
+ - chuyen tiep giua cac router
+ + import {userNavigation} from react-router-dom
+ - truyen du lieu len router 
+Authentication:
+JWT: 
+client => user, pass => server
+client <= success, token <= server

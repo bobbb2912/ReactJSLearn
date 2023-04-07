@@ -2,10 +2,14 @@ import React, {useEffect, useState} from 'react'
 import { Button, Card, Row } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux'
 import {  deletePostAPI, filterPost, getListPost, resetPost } from '../feature/postSlice';
+import Menu from '../../Menu';
+import {useNavigate} from 'react-router-dom';
 
 export default function Post() {
     const posts = useSelector((state) => state.postReducer);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const [postLocal, setPostLocal] = useState(null);
     
     const deleteItem = (id) => {
@@ -23,6 +27,9 @@ export default function Post() {
     const reset = () => {
         setPostLocal(posts);
     }
+    useEffect(() => {
+       dispatch(getListPost());
+    }, []);
     const resetFilterRedux = () => {
         // setPostLocal(posts);
         dispatch(resetPost());
@@ -31,11 +38,12 @@ export default function Post() {
         setPostLocal(posts);
       }, [posts]);
     
-      useEffect(() => {
-        dispatch(getListPost('tham so truyen vao'));
-      }, []);
+      const gotoDetail = (id, name) => {
+        navigate(`/post/${id}/${name}`);
+      };
   return (
     <div>
+        <Menu/>
         <h1>POST LIST</h1>
         {/* <Button onClick={() => filter(3)}>Filter post state</Button>
         <Button style={{marginLeft:'10px', marginRight:'10px'}} 
@@ -44,6 +52,7 @@ export default function Post() {
         onClick={() => filterRedux(3)}>Filter post redux</Button>
         <Button style={{marginLeft:'10px', marginRight:'10px'}} 
         onClick={() => resetFilterRedux()}>Reset filter post redux</Button>
+     
         <Row>
         {posts.dataFilter  ?  posts.dataFilter.map((item, index) => {
             return (
@@ -54,6 +63,9 @@ export default function Post() {
                     <Card.Title>{posts.data[item].title}</Card.Title>
                     <Card.Text>{posts.data[item].content}</Card.Text>
                     <Button onClick={() => deleteItem(item)} variant="danger">Delete</Button>
+                    <Button onClick={() => gotoDetail(item, posts.data[item].title)}>
+                      GotoDetail
+                    </Button>
                 </Card.Body>
                 </Card>
                 
@@ -69,6 +81,9 @@ export default function Post() {
                     <Card.Title>{posts.data[item].title}</Card.Title>
                     <Card.Text>{posts.data[item].content}</Card.Text>
                     <Button onClick={() => deleteItem(item)} variant="danger">Delete</Button>
+                    <Button onClick={() => gotoDetail(item, posts.data[item].title)}>
+                      GotoDetail
+                    </Button>
                 </Card.Body>
                 </Card>
             );

@@ -16,13 +16,9 @@ export const getListPost = createAsyncThunk('products/getList',
     console.log('res',res);
      return res.data;
  });
-export const deletePostAPI = createAsyncThunk('products/delete',
+export const deletePostAPI = createAsyncThunk('products/deletePost',
  async(arg, thunkApi) =>{
-    // console.log('bb arg', arg);
-    // console.log('bb thunkApi getState', thunkApi.getState);
-    // console.log('bb thunkApi dispatch', thunkApi.dispatch(filterPost(2)));
-    const res = await axios.get(`https://reactjs-9478f-default-rtdb.firebaseio.com/products/${arg}.json`);
-    console.log('res',res);
+    const res = await axios.delete(`https://reactjs-9478f-default-rtdb.firebaseio.com/products/${arg}.json`);
     thunkApi.dispatch(getListPost());
      return res.data;
  });
@@ -39,7 +35,6 @@ const postSlice = createSlice({
             title: action.payload.title, 
             rate: 0},
         )
-
         
     },
     deletePost: (state, action) => {
@@ -51,7 +46,7 @@ const postSlice = createSlice({
         
     },
     filterPost: (state, action) => {
-// loc tat ca ca bai post co rate >= action.payload
+// loc tat ca ca bai post co rate > action.payload
         const convertData = JSON.parse(JSON.stringify(state));
         const dataFilter = Object.keys(convertData.data).filter(
         (i) => convertData.data[i].rate>action.payload);

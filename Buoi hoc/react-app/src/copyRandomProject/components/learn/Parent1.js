@@ -3,6 +3,7 @@ import {Button, Row} from 'react-bootstrap';
 import CartItem from './CartItem';
 
 import Child from './Child';
+import Menu from '../../../Menu';
 
 const Parent = () => {
   const [number, setNumber] = useState(0);
@@ -41,6 +42,7 @@ const Parent = () => {
 
   return (
     <div>
+      <Menu/>
       <h2 className='parent-click'>Parent</h2>
       <p>{childData}</p>
       <p>

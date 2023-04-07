@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from './Header';
 import Item from './Item';
 import Toast from 'react-bootstrap/Toast';
+import Menu from '../../Menu';
 
 const URL = "https://64170268205bdf0a1d7e0d5f.mockapi.io/Todo";
 function TodoMain() {
@@ -201,6 +202,7 @@ function TodoMain() {
 
     return (
         <div>
+            <Menu/>
             {/* <Toast>
                 <Toast.Header>
                     <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
